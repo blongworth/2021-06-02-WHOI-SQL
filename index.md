@@ -395,6 +395,9 @@ please preview your site before committing, and make sure to run
   In addition, you will need an up-to-date web browser.
 </p>
 <p>
+  SQLite databases can be used through multiple interfaces. We will use the GUI SQLite DB Browser, the sqlite3 command line tool, and scripted access through R and python. If you do not wish to use the command line, or you are not interested in R or python, you may install the SQLite browser and just the programming language of your choice below. Please contact an instructor if you have questions!
+</p>
+<p>
   We maintain a list of common issues that occur during installation as a reference for instructors
   that may be useful on the
   <a href = "{{site.swc_github}}/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
