@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Data Management with SQL</title>
+    <meta charset="utf-8" />
+    <meta name="date" content="2021-06-02" />
+    <script src="libs/header-attrs-2.8/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Data Management with SQL
+### Woods Hole Oceanographic Institution
+### 2021-06-02
+
+---
+
+
+# .right[Brett Longworth]
+
+.pull-left[![Brett Longworth](images/brett.jpeg)]
+
+.pull-right[
+
+Research Associate, Geology and Geophysics
+
+**Research Interests:** Accelerator Mass Spectrometry, radiocarbon, data mining for method development, links between the marine and terrestrial carbon cycle.
+
+**Fun fact:** Number of living things I take care of has gone up by billions since the pandemic. Mostly sourdough. Some chickens.
+
+]
+
+---
+
+# .right[Joe Futrelle]
+
+.pull-left[![Joe Futrelle](https://avatars2.githubusercontent.com/u/2365298?s=400&amp;u=97004bc2d84a168bcf9b2fd81f03bcde7a15e166&amp;v=4)]
+
+.pull-right[
+
+
+Software Engineer at WHOI
+
+**Research Interests:** Open science, open data, databases, data-intensive computing, machine learning, software engineering best practices
+
+
+**Fun fact:** I was a bassist for the 90s space-rock band Hum
+
+]
+
+---
+
+# .right[Audrey Mickle]
+
+.pull-left[![Audrey Mickle]()]
+
+.pull-right[
+
+
+Software Engineer at WHOI
+
+**Research Interests:** Open science, open data, databases, data-intensive computing, machine learning, software engineering best practices
+
+
+**Fun fact:** I was a bassist for the 90s space-rock band Hum
+
+]
+
+---
+
+# .right[Lyndsey Lefebvre]
+
+.pull-left[![Lyndsey Lefebvre]()]
+
+.pull-right[
+
+
+Software Engineer at WHOI
+
+**Research Interests:** Open science, open data, databases, data-intensive computing, machine learning, software engineering best practices
+
+
+**Fun fact:** I was a bassist for the 90s space-rock band Hum
+
+]
+
+---
+
+# .right[Kodiak Firesmith]
+
+.pull-left[![Kodiak Firesmith]()]
+
+.pull-right[
+
+
+Software Engineer at WHOI
+
+**Research Interests:** Open science, open data, databases, data-intensive computing, machine learning, software engineering best practices
+
+
+**Fun fact:** I was a bassist for the 90s space-rock band Hum
+
+]
+
+---
+
+# Course website
+
+https://blongworth.github.io/2021-06-02-WHOI-SQL/
+
+---
+
+# Getting help and giving feedback
+
+We are here to help! Raise your hand and a helper or instructor will message you in the chat. If it can't be solved via chat you and the helper will move to a breakout room to talk through the problem.
+
+We'll also ask for input and feedback often. Use "yes" and "no" in the participants window. Coffee break indicator also welcome, but we've got a lot to cover!
+
+![Zoom feedback tools](images/zoomtools.png)
+---
+
+# Code of Conduct
+
+We are dedicated to providing a welcoming and supportive environment for all people, regardless of background or identity. Any form or behavior to exclude, intimidate, or cause discomfort is a violation of the Code of Conduct. In order to foster a positive and professional learning environment we encourage the following kinds of behavior in all platforms and events:
+
+* Use welcoming and inclusive language
+* Be respectful of different viewpoints and experiences
+* Gracefully accept constructive criticism
+* Focus on what is best for the community
+* Show courtesy and respect towards other community members
+
+---
+
+class: center, middle
+
+![Carpentries logo](https://carpentries.org/assets/img/TheCarpentries.svg)
+
+
+![Software carpentry](images/swc_logo.png)
+
+.footnote[The Carpentries: https://carpentries.org/]
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.org/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
