@@ -403,6 +403,7 @@ please preview your site before committing, and make sure to run
 <p><a href="https://swcarpentry.github.io/sql-novice-survey/files/survey.db">survey.db</a></p>
 <p>Test your GUI install by opening DB Browser and using the file menu to open `survey.db`</p>
 <p>Test your command line install by opening a shell, navigating to the directory that contains `survey.db`, and typing `sqlite3 survey.db`.</p>
+<p>Test your python install by opening a python prompt or notebook and typing `import sqlite3`. This won't produce output if it's working, but if there's a problem, you'll see an error. Similarly, test your R install by typing `library(RSQLite)` at an R prompt.</p>
 <p>
   We maintain a list of common issues that occur during installation as a reference for instructors
   that may be useful on the
