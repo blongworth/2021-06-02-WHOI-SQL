@@ -395,7 +395,7 @@ please preview your site before committing, and make sure to run
   In addition, you will need an up-to-date web browser.
 </p>
 <p>
-  SQLite databases can be used through multiple interfaces. We will use the GUI SQLite DB Browser, the sqlite3 command line tool, and scripted access through R and python. If you do not wish to use the command line, or you are not interested in R or python, you may install the SQLite browser and just the programming language of your choice below. Please contact an instructor if you have questions!
+  SQLite databases can be used through multiple interfaces. We will use the GUI <a href="https://sqlitebrowser.org/dl/">SQLite DB Browser</a>, the <a href="https://www.sqlite.org/download.html">sqlite3</a> command line tool, and scripted access through R and python. If you do not wish to use the command line, or you are not interested in R or python, you may install the SQLite browser and just the programming language of your choice below. Please contact an instructor if you have questions!
 </p>
 <p>
   We will work with a database of Antarctic survey data during the course. Please download this file and have it available for the course.
